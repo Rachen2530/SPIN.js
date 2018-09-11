@@ -26,5 +26,24 @@ Vid validering av ett ID-nummer kontrolleras födelsedatum och checksumma/kontro
 ### Indata
 Klassen stödjer ID-nummer som är formaterade som både 10 och 12 siffror. För 10-siffriga ID-nummer stödjs även plusseparator mellan födelsedatum och födelsenummer, dvs. YYMMDD+XXXX, som används för att markera att födelseåret inträffade för mer än 100 år sedan.
 
+Följande format på indata stödjs:
+- YYMMDDXXXX
+- YYMMDD-XXXX
+- YYMMDD+XXXX
+- YYMMDD XXXX
+- YYYYMMDDXXX
+- YYYYMMDD-XXXX
+- YYYYMMDD+XXXX
+- YYYYMMDD XXXX
+
 # SPIN Slim
-text
+SPIN Slim är en enklare variant (en singelfunktion) av SPIN, som endast validerar och formaterar ID-nummer. Om ett ID-nummer är giltigt så returnerar funktion detta i ett 12-siffrigt format och det är ogiltigt så returneras *FALSE*.
+
+### Exempel på användning
+```javascript
+<script src="spin.slim.min.js"></script>
+<script>
+    console.log(SPIN("850101-0261")); // 198501010261
+    console.log(SPIN("850229-1272")); // false
+</script>
+```
