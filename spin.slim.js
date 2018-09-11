@@ -1,7 +1,7 @@
 function SPIN(input)
 {
     // Check if input ID is malformed
-    if (!/^([0-9]{6}|[0-9]{8})[\-\+]{0,1}[0-9]{4}$/.test(input))
+    if (!/^([0-9]{6}|[0-9]{8})[\-\+ ]{0,1}[0-9]{4}$/.test(input))
     {
         return false;
     }   
